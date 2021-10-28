@@ -1,0 +1,12 @@
+<header>
+  <h1 class="headline"> 関西 </h1>
+</header>
+<%= link_to "三重", prefecture_mie_path, class:"btn btn-light"%>
+<%= link_to "滋賀", prefecture_shiga_path, class:"btn btn-light"%>
+<%= link_to "京都", prefecture_kyoto_path, class:"btn btn-light"%>
+<%= link_to "大阪", prefecture_osaka_path, class:"btn btn-light"%>
+<%= link_to "兵庫", prefecture_hyogo_path, class:"btn btn-light"%>
+<%= link_to "奈良", prefecture_nara_path, class:"btn btn-light"%>
+<%= link_to "和歌山", prefecture_wakayama_path, class:"btn btn-light"%>
+
+<%= render 'post_images/list', post_images: @post_images %>

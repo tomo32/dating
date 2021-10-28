@@ -1,0 +1,12 @@
+<header>
+  <h1 class="headline"> 九州 </h1>
+</header>
+<%= link_to "福岡", prefecture_hukuoka_path, class:"btn btn-light"%>
+<%= link_to "佐賀", prefecture_saga_path, class:"btn btn-light"%>
+<%= link_to "長崎", prefecture_nagasaki_path, class:"btn btn-light"%>
+<%= link_to "熊本", prefecture_kumamoto_path, class:"btn btn-light"%>
+<%= link_to "大分", prefecture_oita_path, class:"btn btn-light"%>
+<%= link_to "宮崎", prefecture_miyazaki_path, class:"btn btn-light"%>
+<%= link_to "鹿児島", prefecture_kagoshima_path, class:"btn btn-light"%>
+
+<%= render 'post_images/list', post_images: @post_images %>

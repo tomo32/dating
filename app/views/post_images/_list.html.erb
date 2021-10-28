@@ -1,0 +1,27 @@
+<div class="image-wrap">
+  <% post_images.each do |post_image| %>
+  <div class="image-box">
+    <%= link_to post_image_path(post_image.id) do %>
+  <p>
+  <% if post_image.image? %>
+      <%= image_tag post_image.image.url, size: '200x200' %>
+  <% end %>
+  </p>
+    <% end %>
+    <div class="image-comment pb-2">
+      <span class="user pr-5">
+        <%= link_to user_path(post_image.user.id), class:"text-dark" do %>
+          <% if post_image.user.image? %>
+            <%= image_tag post_image.user.image.url, size: "40x40", fallback: "no_image.jpg", class:"rounded-circle"; %>
+          <% end %>
+          <%= post_image.user.name %>
+        <% end %>
+      </span>
+      <span class="title">
+        <%= link_to post_image.name, post_image_path(post_image.id), class:"text-dark" %>
+      </span>
+    </div>
+  </div>
+  <% end %>
+</div>
+<%= paginate post_images %>

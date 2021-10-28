@@ -1,0 +1,110 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+.navbar-toggler {
+  border-color: white;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kaushan Script", cursive, sans-serif;
+}
+
+header .headline {
+  font-size: 32px;
+  width: 100%;
+  padding: 15px;
+  margin: 30px auto 20px;
+  text-align: center;
+  border-bottom: solid 5px #000000;
+}
+
+nav {
+  width: 100%;
+  margin: 0 auto;
+  border-top: solid 0.7px #000000;
+  border-bottom: solid 0.7px #000000;
+}
+
+.nav-list {
+  text-align: center;
+  padding: 10px 0;
+  margin: 0 auto;
+}
+
+.nav-list-item {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+}
+
+main {
+  min-height: 100vh;
+  width: 880px;
+  margin: 0 auto;
+  position: relative;
+  padding-bottom: 120px;
+  box-sizing: border-box;
+}
+
+.image-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.image-box {
+  width: 200px;
+  height: 260px;
+  margin: 10px;
+  margin-top: 10px;
+  object-fit: cover;
+}
+
+.spot-image img {
+  object-fit: cover;
+}
+
+.image-comment {
+  margin-top: 0;
+  left: 0;
+  display: block;
+  color: gray;
+  font-size: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#map {
+  margin-top: 100px;
+  height: 600px;
+  width: 100%;
+}
+
+footer {
+  margin-top: auto;
+  width: 100%;
+  padding: 30px 0;
+}

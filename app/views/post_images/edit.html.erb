@@ -1,0 +1,23 @@
+<div class="post-body m-5">
+  <h2>投稿編集</h2>
+  <% if @post_image.errors.any? %>
+  <%= @post_image.errors.count %>件のエラーが発生しました
+  <% @post_image.errors.full_messages.each do |message| %>
+  <%= message %>
+  <% end %>
+  <% end %>
+  <%= form_with model:@post_image, local: true do |f| %>
+  <p>
+      <% if @post_image.image? %>
+      <div class="thumbnail">
+      <%= image_tag @post_image.image.url %>
+      </div>
+      <% end %>
+    </p>
+  <%= f.file_field :image, placeholder: "画像" %>
+  <p>場所</br><%= f.text_field :name %></p>
+  <p>説明</br><%= f.text_area :caption %></p>
+  <%= f.submit '保存' %>
+  <% end %>
+  <%= link_to "Back", post_image_path(@post_image), class:"text-secondary" %>
+</div>

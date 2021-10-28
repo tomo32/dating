@@ -1,13 +1,26 @@
 <h2>プロフィール編集</h2>
+<% if @user.errors.any? %>
+<%= @user.errors.count %>件のエラーが発生しました
+<% @user.errors.full_messages.each do |message| %>
+<%= message %>
+<% end %>
+<% end %>
 <%= form_with model:@user, local:true do |f| %>
 <label for="inputName">Name</label>
 <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%>
-<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
+<p>
+      <% if @user.image? %>
+      <div class="thumbnail">
+      <%= image_tag @user.image.url, size: '60x60' %>
+      </div>
+      <% end %>
+    </p>
 <label for="inputImage">ProfileImage</label>
-<%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+<%= f.file_field :image, placeholder: "プロフィール画像" %>
 <label for="inputIntroduction">Introduction</label>
 <%= f.text_area :introduction, autofocus: true, id:"inputIntroduction", placeholder:"自己紹介"%>
 <label for="inputInstagram">Instagram</label>
 <%= f.text_field :instagram, autofocus: true, id:"inputInstagram", placeholder:"ユーザーネームを入れてください"%>
 <%= f.submit "変更を保存" %>
 <% end %>
+<%= link_to "Back", user_path(@user), class:"text-secondary" %>

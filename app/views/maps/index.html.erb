@@ -1,0 +1,47 @@
+<div class="spot-image">
+  <div id="map"></div>
+</div>
+<script type = 'text/javascript'>
+  function initMap() {
+	// 現在位置の特定
+	navigator.geolocation.getCurrentPosition(function(position) {
+				// LatLngに位置座標を代入
+				LatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+				// mapの初期位置設定
+				map = new google.maps.Map(document.getElementById('map'), {
+					center: LatLng,
+					zoom: 13
+				});
+				// map.setCenterで地図が初期位置に移動
+				map.setCenter(LatLng);
+
+				<% @post_images.each do |post_image| %> (function() {
+					var contentString = '<%= link_to post_image.name, post_image_path(post_image) %>' + '</br>' + '<%= image_tag post_image.image.url, size: '200x200' %>';
+					var infowindow = new google.maps.InfoWindow({
+						content: contentString
+					});
+					var marker = new google.maps.Marker({
+						position: {
+							lat: <%= post_image.latitude %>,
+							lng: <%= post_image.longitude %>,
+						},
+						map: map,
+						title: contentString,
+            icon: {
+              url: '<%= post_image.image.url %>',
+              scaledSize : new google.maps.Size(70, 70)
+            }
+					});
+					marker.addListener('click', function() {
+						infowindow.open(map, marker);
+					});
+				})();
+				<% end %>
+
+    });
+	}
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV["GOOGLE_MAP_API_KEY"] %>&callback=initMap">
+</script>
+
