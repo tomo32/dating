@@ -15,9 +15,12 @@ class MapsController < ApplicationController
   def ab
     Dotenv.load
     client = GooglePlaces::Client.new ENV['GOOGLE_MAP_API_KEY']
+
+    #位置情報取得
     latitude = params[:latitude].to_f
     longitude = params[:longitude].to_f
 
+    #周辺スポット取得
     @spots = client.spots(latitude, longitude, :language => 'ja')
   end
 
