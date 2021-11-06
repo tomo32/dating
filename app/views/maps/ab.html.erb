@@ -1,5 +1,5 @@
 <script type="text/javascript">
-  if (navigator.geolocation) {
+
     navigator.geolocation.getCurrentPosition(
 
       function(position){
@@ -25,11 +25,9 @@
         });
       }
     )
-  }
+
 </script>
 
 <!-- ここが表示されないんです、、コンソール見るとデータの受け渡しはできてると思うんですが、、
 ajax使ってる関係だとは思うんですけど分からないです、、　-->
-<%= @spots.each do |spot| %>
-  <%= spot.name %>
-<% end %>
+<%= @spot %>

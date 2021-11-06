@@ -28,8 +28,8 @@
   </p>
   <p><%= @post_image.created_at.strftime('%Y/%m/%d') %></p>
   <% if @post_image.user == current_user %>
-  <%= link_to "編集", edit_post_image_path(@post_image), class:"text-secondary" %>
-  <%= link_to "削除", post_image_path(@post_image), method: :delete, class:"text-secondary" %>
+  <%= link_to "編集", edit_post_image_path(@post_image), class:"btn btn-light" %>
+  <%= link_to "削除", post_image_path(@post_image), method: :delete, class:"btn btn-light" %>
   <% end %>
 
 <script type="text/javascript">
@@ -79,7 +79,7 @@
             score: <%= @post_image.rate %>,
           });
           </script>
-<h5 class="mb-3">映え：<%= @post_image.photo_rate %>点</h5>
+<h5 class="mb-3">写真映え：<%= @post_image.photo_rate %>点</h5>
 
 
 <div id="star-photo-rate-<%= @post_image.id %>"></div>

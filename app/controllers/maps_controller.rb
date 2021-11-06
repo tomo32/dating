@@ -21,7 +21,8 @@ class MapsController < ApplicationController
     longitude = params[:longitude].to_f
 
     #周辺スポット取得
-    @spots = client.spots(latitude, longitude, :language => 'ja')
+    spots = client.spots(latitude, longitude, :language => 'ja')
+    
   end
 
   # GET /maps/new

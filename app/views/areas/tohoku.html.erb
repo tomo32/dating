@@ -1,11 +1,18 @@
-<header>
-  <h1 class="headline"> 東北 </h1>
-</header>
-<%= link_to "青森", prefecture_aomori_path, class:"btn btn-light"%>
-<%= link_to "岩手", prefecture_iwate_path, class:"btn btn-light"%>
-<%= link_to "宮城", prefecture_miyagi_path, class:"btn btn-light"%>
-<%= link_to "秋田", prefecture_akita_path, class:"btn btn-light"%>
-<%= link_to "山形", prefecture_yamagata_path, class:"btn btn-light"%>
-<%= link_to "福島", prefecture_hukushima_path, class:"btn btn-light"%>
-
-<%= render 'post_images/list', post_images: @post_images %>
+<div class="container">
+  <div class="row">
+    <%= render 'post_images/table' %>
+    <div class="col-md-10">
+      <header>
+        <h1 class="headline"> 東北 </h1>
+      </header>
+      <%= link_to "青森", prefecture_aomori_path, class:"btn btn-light"%>
+      <%= link_to "岩手", prefecture_iwate_path, class:"btn btn-light"%>
+      <%= link_to "宮城", prefecture_miyagi_path, class:"btn btn-light"%>
+      <%= link_to "秋田", prefecture_akita_path, class:"btn btn-light"%>
+      <%= link_to "山形", prefecture_yamagata_path, class:"btn btn-light"%>
+      <%= link_to "福島", prefecture_hukushima_path, class:"btn btn-light"%>
+      <%= render 'post_images/list', post_images: @post_images %>
+    </div>
+    <div class="col-md-1">
+  </div>
+</div>

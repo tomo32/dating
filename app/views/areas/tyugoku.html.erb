@@ -1,10 +1,17 @@
-<header>
-  <h1 class="headline"> 中国 </h1>
-</header>
-<%= link_to "鳥取", prefecture_tottori_path, class:"btn btn-light"%>
-<%= link_to "島根", prefecture_shimane_path, class:"btn btn-light"%>
-<%= link_to "岡山", prefecture_okayama_path, class:"btn btn-light"%>
-<%= link_to "広島", prefecture_hiroshima_path, class:"btn btn-light"%>
-<%= link_to "山口", prefecture_yamaguchi_path, class:"btn btn-light"%>
-
-<%= render 'post_images/list', post_images: @post_images %>
+<div class="container">
+  <div class="row">
+    <%= render 'post_images/table' %>
+    <div class="col-md-10">
+      <header>
+        <h1 class="headline"> 中国 </h1>
+      </header>
+      <%= link_to "鳥取", prefecture_tottori_path, class:"btn btn-light"%>
+      <%= link_to "島根", prefecture_shimane_path, class:"btn btn-light"%>
+      <%= link_to "岡山", prefecture_okayama_path, class:"btn btn-light"%>
+      <%= link_to "広島", prefecture_hiroshima_path, class:"btn btn-light"%>
+      <%= link_to "山口", prefecture_yamaguchi_path, class:"btn btn-light"%>
+      <%= render 'post_images/list', post_images: @post_images %>
+    </div>
+    <div class="col-md-1">
+  </div>
+</div>

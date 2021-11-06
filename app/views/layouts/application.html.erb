@@ -42,6 +42,12 @@
             <li class="nav-item ml-3">
               <%= link_to '現在地から探す', maps_index_path, class:"text-white" %>
             </li>
+            <li class="nav-item ml-3">
+            <%= form_with url: search_path, method: :get, local: true do |f| %>
+              <%= f.text_field :keyword, value: @keyword %>
+              <%= f.submit "検索" %>
+            <% end %>
+            </li>
             <% else %>
             <li class="nav-item ml-3">
               <%= link_to "新規登録", new_user_registration_path, class:"text-white" %>

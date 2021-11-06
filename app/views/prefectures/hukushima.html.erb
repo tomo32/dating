@@ -1,5 +1,12 @@
-<header>
-  <h1 class="headline"> 福島 </h1>
-</header>
-
-<%= render 'post_images/list', post_images: @post_images %>
+<div class="container">
+  <div class="row">
+    <%= render 'post_images/table' %>
+    <div class="col-md-10">
+      <header>
+        <h1 class="headline"> 福島 </h1>
+      </header>
+      <%= render 'post_images/list', post_images: @post_images %>
+    </div>
+    <div class="col-md-1">
+  </div>
+</div>

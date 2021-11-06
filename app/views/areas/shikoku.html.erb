@@ -1,9 +1,16 @@
-<header>
-  <h1 class="headline"> 四国 </h1>
-</header>
-<%= link_to "青森", prefecture_tokushima_path, class:"btn btn-light"%>
-<%= link_to "青森", prefecture_kagawa_path, class:"btn btn-light"%>
-<%= link_to "青森", prefecture_aichi_path, class:"btn btn-light"%>
-<%= link_to "青森", prefecture_kochi_path, class:"btn btn-light"%>
-
-<%= render 'post_images/list', post_images: @post_images %>
+<div class="container">
+  <div class="row">
+    <%= render 'post_images/table' %>
+    <div class="col-md-10">
+      <header>
+        <h1 class="headline"> 四国 </h1>
+      </header>
+      <%= link_to "徳島", prefecture_tokushima_path, class:"btn btn-light"%>
+      <%= link_to "香川", prefecture_kagawa_path, class:"btn btn-light"%>
+      <%= link_to "愛媛", prefecture_ehime_path, class:"btn btn-light"%>
+      <%= link_to "高知", prefecture_kochi_path, class:"btn btn-light"%>
+      <%= render 'post_images/list', post_images: @post_images %>
+    </div>
+    <div class="col-md-1">
+  </div>
+</div>

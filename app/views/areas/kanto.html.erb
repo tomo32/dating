@@ -1,12 +1,20 @@
-<header>
-  <h1 class="headline"> 関東 </h1>
-</header>
-<%= link_to "茨城", prefecture_ibaraki_path, class:"btn btn-light"%>
-<%= link_to "栃木", prefecture_tochigi_path, class:"btn btn-light"%>
-<%= link_to "群馬", prefecture_gunma_path, class:"btn btn-light"%>
-<%= link_to "埼玉", prefecture_saitama_path, class:"btn btn-light"%>
-<%= link_to "千葉", prefecture_chiba_path, class:"btn btn-light"%>
-<%= link_to "東京", prefecture_tokyo_path, class:"btn btn-light"%>
-<%= link_to "神奈川", prefecture_kanagawa_path, class:"btn btn-light"%>
 
-<%= render 'post_images/list', post_images: @post_images %>
+<div class="container">
+  <div class="row">
+    <%= render 'post_images/table' %>
+    <div class="col-md-10">
+      <header>
+        <h1 class="headline"> 関東 </h1>
+      </header>
+      <%= link_to "茨城", prefecture_ibaraki_path, class:"btn btn-light"%>
+      <%= link_to "栃木", prefecture_tochigi_path, class:"btn btn-light"%>
+      <%= link_to "群馬", prefecture_gunma_path, class:"btn btn-light"%>
+      <%= link_to "埼玉", prefecture_saitama_path, class:"btn btn-light"%>
+      <%= link_to "千葉", prefecture_chiba_path, class:"btn btn-light"%>
+      <%= link_to "東京", prefecture_tokyo_path, class:"btn btn-light"%>
+      <%= link_to "神奈川", prefecture_kanagawa_path, class:"btn btn-light"%>
+      <%= render 'post_images/list', post_images: @post_images %>
+    </div>
+    <div class="col-md-1">
+  </div>
+</div>

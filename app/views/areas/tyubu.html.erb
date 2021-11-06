@@ -1,15 +1,21 @@
-<header>
-  <h1 class="headline"> 中部 </h1>
-</header>
-<%= link_to "新潟", prefecture_nigata_path, class:"btn btn-light"%>
-<%= link_to "富山", prefecture_toyama_path, class:"btn btn-light"%>
-<%= link_to "石川", prefecture_ishikawa_path, class:"btn btn-light"%>
-<%= link_to "福井", prefecture_hukui_path, class:"btn btn-light"%>
-<%= link_to "山梨", prefecture_yamanashi_path, class:"btn btn-light"%>
-<%= link_to "長野", prefecture_nagano_path, class:"btn btn-light"%>
-<%= link_to "岐阜", prefecture_gifu_path, class:"btn btn-light"%>
-<%= link_to "静岡", prefecture_shizuoka_path, class:"btn btn-light"%>
-<%= link_to "愛知", prefecture_aichi_path, class:"btn btn-light"%>
-
-
-<%= render 'post_images/list', post_images: @post_images %>
+<div class="container">
+  <div class="row">
+    <%= render 'post_images/table' %>
+    <div class="col-md-10">
+      <header>
+        <h1 class="headline"> 中部 </h1>
+      </header>
+      <%= link_to "新潟", prefecture_nigata_path, class:"btn btn-light"%>
+      <%= link_to "富山", prefecture_toyama_path, class:"btn btn-light"%>
+      <%= link_to "石川", prefecture_ishikawa_path, class:"btn btn-light"%>
+      <%= link_to "福井", prefecture_hukui_path, class:"btn btn-light"%>
+      <%= link_to "山梨", prefecture_yamanashi_path, class:"btn btn-light"%>
+      <%= link_to "長野", prefecture_nagano_path, class:"btn btn-light"%>
+      <%= link_to "岐阜", prefecture_gifu_path, class:"btn btn-light"%>
+      <%= link_to "静岡", prefecture_shizuoka_path, class:"btn btn-light"%>
+      <%= link_to "愛知", prefecture_aichi_path, class:"btn btn-light"%>
+      <%= render 'post_images/list', post_images: @post_images %>
+    </div>
+    <div class="col-md-1">
+  </div>
+</div>

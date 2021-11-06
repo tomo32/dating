@@ -40,4 +40,9 @@ class PostImage < ApplicationRecord
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end
+
+  def self.search(keyword)
+    where(["name like? OR caption like?", "%#{keyword}%", "%#{keyword}%"])
+  end
+
 end

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'maps/index', to:'maps#index'
   get 'maps/ab', to:'maps#ab'
+  get 'search', to: 'post_images#search'
   resources :post_images, only: [:new, :create, :index, :show, :destroy, :edit, :update] do
     resource :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
